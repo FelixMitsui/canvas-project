@@ -23,9 +23,11 @@ export default class KonvaJS {
     this.stage = null
     this.layer = null
     this.group = null
+    //元件計數
     this.count = 0
     //選取目標
     this.selectTarget = null
+    //元件陣列
     this.groupList = []
     this.listener = new Listener(this)
     this.drawer = new Drawer(this)
@@ -75,6 +77,7 @@ export default class KonvaJS {
       return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16)
     })
   }
+
   //建立圖層
   newLayer() {
     const layer = new Konva.Layer({})
@@ -96,21 +99,26 @@ export default class KonvaJS {
       this.count = 0
     }
     this.count++
+
     const group = new Konva.Group()
     const rect = this.drawer.createGraph(GraphType.RECT)
     const mainText = this.drawer.createGraph(TextType.TEXT, { name: 'mainText', text: `元件(${this.count})`, fill: 'black' })
+
     mainText?.position({ x: -50, y: -10 })
     group.position({ x: 60, y: 80 })
+
     const textBg = this.drawer.createGraph(GraphType.RECT, { height: 25, fill: 'white', cornerRadius: 5 })
     const text = this.drawer.createGraph(TextType.TEXT, { fill: 'purple' })
+
     text?.position({ x: -50, y: -50 })
     textBg?.position({ x: 0, y: -30 })
+
     if (rect && text && textBg && mainText) {
       group.add(rect)
       group.add(mainText)
       group.add(textBg)
       group.add(text)
-
+      //群組設置為可拖曳
       group.draggable(true)
 
       this.groupList.push({ group, count: this.count })

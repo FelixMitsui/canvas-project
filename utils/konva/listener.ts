@@ -10,7 +10,6 @@ export default class Listener {
 
   stageEvent() {
     if (!this.konva.stage) return
-    //舞台內容元素
 
     //圖層滑鼠按下監聽
     this.konva.layer?.on('mousedown', (event: Konva.KonvaEventObject<MouseEvent>): void => {
@@ -18,8 +17,11 @@ export default class Listener {
       const shape = event.target;
       const parent = shape.getParent()
 
+      //點擊目標相同退出
       if (shape && parent?._id === this.konva.selectTarget?._id) return
+      //清空監聽事件
       this.konva.selectTarget?.off()
+      //指向新對象
       this.konva.selectTarget = parent as Konva.Group
 
       this.konva.selectTarget.on('dragstart', () => {
@@ -43,6 +45,7 @@ export default class Listener {
         });
       })
     })
+    //圖層雙擊監聽
     this.konva.layer?.on('dblclick', (): void => {
 
       const children = this.konva.selectTarget?.getChildren();
