@@ -1,5 +1,4 @@
 import KonvaJS from './'
-
 export default class Controller {
   private konva: KonvaJS
   constructor(konva: KonvaJS) {

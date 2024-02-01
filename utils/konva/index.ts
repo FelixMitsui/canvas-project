@@ -1,5 +1,5 @@
 import Konva from 'konva'
-import { type IMenuList, GraphType, TextType } from './type'
+import { GraphType, TextType } from './type'
 import Listener from './listener'
 import Drawer from './drawer'
 import Controller from './controller'

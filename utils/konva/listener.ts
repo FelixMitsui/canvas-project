@@ -1,5 +1,5 @@
 import Konva from 'konva'
-import { GraphType, TextType } from './type'
+import { TextType } from './type'
 import KonvaJS from './'
 export default class Listener {
   private konva: KonvaJS

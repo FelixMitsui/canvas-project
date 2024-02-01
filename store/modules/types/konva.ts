@@ -1,5 +1,5 @@
 import Konva from 'konva'
+import KonvaJS from '~/utils/konva'
 export interface IKonvaState {
-  konva: Konva.NodeConfig
-  slideshowUrls: string[]
+  konva: KonvaJS
 }

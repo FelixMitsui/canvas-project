@@ -5,7 +5,6 @@ const useKonvaStore = defineStore('GraphStore', {
   state: (): IKonvaState => {
     return {
       konva: new KonvaJS('canvas'),
-      slideshowUrls: [],
     }
   },
 })

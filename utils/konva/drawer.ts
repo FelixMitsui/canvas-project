@@ -1,7 +1,6 @@
 import KonvaJS from './'
 import Konva from 'konva'
 import { GraphType, TextType } from './type'
-
 export default class Drawer {
   private konva: KonvaJS
   constructor(konva: any) {
