@@ -14,7 +14,9 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/png', href: '/title_logo.png' }
       ]
-    }
+    },
+    baseURL: process.env.NODE_ENV === 'production' ? '/canvas-project/' : '/',
+    buildAssetsDir: '/static/'
   },
   devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],

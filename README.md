@@ -2,6 +2,7 @@
 
 ![首頁](https://github.com/FelixMitsui/canvas-project/blob/main/assets/images/canvas動畫.gif?raw=true)
 
+部屬網址:https://felixmitsui.github.io/canvas-project/
 
 ## 簡介
 
